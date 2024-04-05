@@ -3,7 +3,7 @@ class Sensor {
     this.car = car
     this.rayCount = 3
     this.rayLength = 100
-    this.raySpread = Math.PI / 4
+    this.raySpread = Math.PI / 3
 
     this.rays = []
     this.readings = []
@@ -44,7 +44,7 @@ class Sensor {
       const rayAngle = lerp(
         this.raySpread / 2,
         -this.raySpread / 2,
-        i / (this.rayCount - 1) + this.car.angle
+        i / (this.rayCount - 1) - this.car.angle
       )
 
       const start = { x: this.car.x, y: this.car.y }
